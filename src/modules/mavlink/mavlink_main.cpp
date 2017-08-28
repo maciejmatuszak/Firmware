@@ -2077,7 +2077,7 @@ Mavlink::task_main(int argc, char *argv[])
 		configure_stream("WIND_COV", 10.0f);
 		configure_stream("POSITION_TARGET_LOCAL_NED", 10.0f);
 		configure_stream("SYSTEM_TIME", 1.0f);
-		configure_stream("TIMESYNC", 10.0f);
+        configure_stream("TIMESYNC", 50.0f);
 		configure_stream("CAMERA_CAPTURE", 2.0f);
 		configure_stream("CAMERA_TRIGGER");
 		configure_stream("CAMERA_IMAGE_CAPTURED");
