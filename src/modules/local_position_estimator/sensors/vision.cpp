@@ -120,6 +120,9 @@ void BlockLocalPositionEstimator::visionCorrect()
 	// fault detection
 	float beta = (r.transpose() * (S_I * r))(0, 0);
 
+    //seems the original threshols is too strict, lets relax it a bit.
+    beta = beta / 5.0f;
+
 	if (beta > BETA_TABLE[n_y_vision]) {
 		if (!(_sensorFault & SENSOR_VISION)) {
 			mavlink_and_console_log_info(&mavlink_log_pub, "[lpe] vision position fault, beta %5.2f", double(beta));
